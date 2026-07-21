@@ -72,6 +72,7 @@ embedded-systems-lab/
 ├── docs/
 │   ├── development-environment.md
 │   ├── coding-guidelines.md
+│   ├── experiment-template.md
 │   ├── debugging.md
 │   └── resources.md
 │
