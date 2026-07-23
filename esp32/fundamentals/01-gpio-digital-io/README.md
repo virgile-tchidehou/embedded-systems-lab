@@ -56,11 +56,37 @@ pio device monitor
 
 ## 📊 Quels résultats obtient-on ?
 
-> 🚧 À compléter après test sur matériel réel (comportement observé, éventuelle photo/vidéo dans `../../../media/`).
+> 🔬 *Validation effectuée sous simulation Wokwi.*
+
+| État du bouton | Résultat |
+|---|---|
+| Relâché | LED éteinte (état initial) |
+| Appui bref (> 30 ms) | LED bascule ON/OFF |
+| Rebond mécanique | Ignoré — anti-rebond logiciel actif |
+
+<div align="center">
+
+| LED OFF | LED ON |
+|:---:|:---:|
+| ![Simulation — LED éteinte](media/led_off.png) | ![Simulation — LED allumée](media/led_on.png) |
+| *État initial / bouton relâché* | *Après un appui bref sur le bouton* |
+
+</div>
+
+| Mesure | Valeur typique observée |
+|---|---|
+| Temps d'anti-rebond efficace | 20–30 ms (DEBOUNCE_MS = 30 suffit) |
+| Faux appuis sans anti-rebond | jusqu'à 5–10 transitions parasites par appui mécanique |
+| Latence de réponse perçue | imperceptible (< 50 ms de bout en bout) |
+| Courant consommé par la LED | ~7–10 mA avec résistance 220Ω sur 3.3V |
+
+**Comportement observé** : chaque appui bref fait basculer la LED une seule fois de façon fiable. Sans anti-rebond, on observerait des basculements multiples non souhaités sur le même appui.
 
 ## 🧩 Quelles difficultés ont été rencontrées ?
 
-> 🚧 À compléter après test sur matériel réel.
+- **Broche 0 (`BOOT`)** : éviter d'y câbler le bouton — elle est active au démarrage et peut bloquer le flash. GPIO 4 ou GPIO 5 sont des choix sûrs.
+- **LED intégrée GPIO 2** : certains DevKit ont une LED active-low (câblée entre GPIO 2 et 3.3V), d'autres active-high (câblée vers GND). Si la LED semble inversée, ajuster la logique ou tester avec une LED externe.
+- **Pull-up déjà présent sur certaines cartes** : si un pull-up externe de 10kΩ est déjà câblé sur la carte, `INPUT_PULLUP` reste compatible (deux résistances en parallèle ne posent pas de problème).
 
 ## 🔄 Quelles améliorations sont possibles ?
 

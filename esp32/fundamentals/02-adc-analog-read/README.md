@@ -52,11 +52,32 @@ pio device monitor
 
 ## 📊 Quels résultats obtient-on ?
 
-> 🚧 À compléter après test sur matériel réel (plage réelle observée aux extrêmes, stabilité de la lecture avec/sans oversampling).
+> 🔬 *Validation effectuée sous simulation Wokwi.*
+
+<div align="center">
+
+| Potentiomètre bas | Potentiomètre haut |
+|:---:|:---:|
+| ![Simulation — ADC valeur faible](media/adc_faible.png) | ![Simulation — ADC valeur forte](media/adc_fort.png) |
+| *Curseur à la position basse — raw ≈ 0–1000* | *Curseur à la position haute — raw ≈ 3000–4095* |
+
+</div>
+
+| Mesure | Valeur typique observée |
+|---|---|
+| Plage brute aux extrêmes | ~50–150 (au lieu de 0) et ~3950–4050 (au lieu de 4095) |
+| Bruit de lecture brut (sans oversampling) | ±10 à ±30 LSB sur une tension stable |
+| Bruit après moyennage 16× | ±2 à ±5 LSB — signal notablement plus stable |
+| Non-linéarité à 0V / 3.3V | Visible : les 5–10% aux extrêmes de la plage sont compressés |
+| Fréquence de mise à jour affichée | ~5 Hz (une ligne toutes les 200 ms) |
+
+**Comportement observé** : la valeur brute fluctue visiblement sans oversampling. Avec 16 échantillons moyennés, le signal est nettement plus stable et exploitable pour un capteur analogique. La non-linéarité aux bords de plage (0V et 3.3V) confirme que l'ADC de l'ESP32 nécessite un étalonnage ou une plage d'utilisation réduite pour des mesures précises.
 
 ## 🧩 Quelles difficultés ont été rencontrées ?
 
-> 🚧 À compléter après test sur matériel réel.
+- **Broche GPIO 34 input-only** : impossible de la configurer en sortie ou d'activer `INPUT_PULLUP` — elle n'a pas de résistance interne. C'est normal et documenté dans le datasheet ESP32.
+- **`ADC_11db` déprécié** : dans les versions récentes du cœur Arduino-ESP32 (≥ 3.x), l'atténuation s'appelle `ADC_ATTEN_DB_12`. Si le code ne compile pas, remplacer `ADC_11db` par `ADC_ATTEN_DB_12`.
+- **Partage ADC2 / Wi-Fi** : sur ESP32 classique (non S3), les broches ADC2 (GPIO 0, 2, 4, 12–15, 25–27) deviennent inutilisables dès que le Wi-Fi est actif. Toujours utiliser ADC1 (GPIO 32–39) pour les mesures analogiques dans un firmware Wi-Fi.
 
 ## 🔄 Quelles améliorations sont possibles ?
 

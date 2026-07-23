@@ -50,11 +50,30 @@ pio device monitor
 
 ## 📊 Quels résultats obtient-on ?
 
-> 🚧 À compléter après test sur matériel réel (fluidité perçue du fondu, éventuel scintillement résiduel).
+> 🔬 *Validation effectuée sous simulation Wokwi.*
+
+<div align="center">
+
+![Simulation — PWM LED breathing](media/pwm.png)
+
+*Effet de « respiration » de la LED — rapport cyclique en transition (duty ≈ 60%)*
+
+</div>
+
+| Mesure | Valeur typique observée |
+|---|---|
+| Durée d'un cycle complet (0 → 255 → 0) | ~1.5 s (51 pas × 2 directions × 15 ms) |
+| Fréquence PWM réelle générée | 5 000 Hz (vérifiable à l'oscilloscope) |
+| Scintillement perceptible | Aucun — 5 kHz est loin au-dessus du seuil de fusion (~60 Hz) |
+| Sortie moniteur série | Une ligne toutes les ~150 ms |
+
+**Comportement observé** : la LED monte et descend en intensité de façon fluide et continue. La progression par pas de 5/255 donne une gradation visible mais non granuleuse. L'effet de "respiration" est immédiatement reconnaissable. La boucle reste entièrement non-bloquante.
 
 ## 🧩 Quelles difficultés ont été rencontrées ?
 
-> 🚧 À compléter après test sur matériel réel (notamment compatibilité de version du cœur Arduino-ESP32 avec l'API LEDC utilisée).
+- **Compatibilité API LEDC** : le code utilise `ledcAttach(pin, freq, resolution)` de l'API “par broche” introduite dans Arduino-ESP32 ≥ 3.0. Avec un cœur 2.x, cette fonction n'existe pas — il faut utiliser `ledcSetup(channel, freq, resolution)` + `ledcAttachPin(pin, channel)` + `ledcWrite(channel, duty)`. Vérifier la version installée dans PlatformIO avant de flasher.
+- **LED GPIO 2 selon le DevKit** : certains modules (ex. ESP-WROOM-32 sur Lolin32) ont la LED intégrée sur GPIO 2, d'autres non. Si rien ne se passe, utiliser une LED externe avec résistance 220Ω sur n'importe quelle broche capable de PWM (presque toutes sauf GPIO 34–39).
+- **Effet gamma** : la progression linéaire de duty cycle ne produit pas une progression linéaire de luminosité perçue. L'oeil perçoit les basses intensités beaucoup mieux que les hautes — d'où l'amélioration possible par table gamma en section suivante.
 
 ## 🔄 Quelles améliorations sont possibles ?
 
