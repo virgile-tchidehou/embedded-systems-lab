@@ -90,11 +90,11 @@ Progress legend:
 |--------|:------:|
 | FreeRTOS Basics | 🟩 |
 | Tasks | 🟩 |
-| Queues | 🟨 |
-| Semaphores | 🟨 |
-| Mutexes | 🟨 |
-| Event Groups | ⬜ |
-| Timers | 🟨 |
+| Queues | 🟩 |
+| Semaphores | 🟩 |
+| Mutexes | 🟩 |
+| Event Groups | 🟩 |
+| Timers | 🟩 |
 | Memory Management | ⬜ |
 
 ---
