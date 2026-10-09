@@ -2,19 +2,16 @@
 
 # ⚙️ Embedded Systems Lab
 
-### A Personal Engineering Laboratory for Embedded Systems, Real-Time Programming and Hardware/Software Integration
+### Personal laboratory for embedded systems, real-time programming and hardware/software integration
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/Status-Active%20Learning-blue.svg)
 ![Language](https://img.shields.io/badge/C-C%2FC%2B%2B-00599C.svg?logo=cplusplus)
-![Platform](https://img.shields.io/badge/Platforms-ESP32%20%7C%20STM32%20%7C%20RaspberryPiPico-success.svg)
-
-![FreeRTOS](https://img.shields.io/badge/RTOS-FreeRTOS-e6522c.svg)
-![ESP-IDF](https://img.shields.io/badge/Framework-ESP--IDF-red.svg)
+![Platform](https://img.shields.io/badge/Platform-ESP32-E7352C.svg?logo=espressif&logoColor=white)
+![RTOS](https://img.shields.io/badge/RTOS-FreeRTOS-e6522c.svg)
 ![Arduino](https://img.shields.io/badge/Framework-Arduino-00979D.svg)
-![PlatformIO](https://img.shields.io/badge/IDE-PlatformIO-orange.svg)
 
-**Embedded Systems • IoT • RTOS • Drivers • Industrial Communication • Hardware Design**
+**Embedded Systems • RTOS • Drivers • Communication • IoT • Hardware Integration**
 
 </div>
 
@@ -22,40 +19,40 @@
 
 # 📖 Overview
 
-Welcome to my personal Embedded Systems Laboratory.
+This repository is my personal laboratory for learning and experimenting with embedded systems through practical implementation, hardware prototyping and technical documentation.
 
-This repository documents my journey toward becoming an Embedded Systems Engineer through hands-on experiments, hardware prototyping and software development.
+The current work is centered on **ESP32, C/C++, FreeRTOS, peripherals and communication protocols**. More advanced platforms and topics are introduced progressively as the laboratory evolves.
 
-Rather than publishing isolated examples, this repository is organized as a structured engineering laboratory where every experiment contributes to a deeper understanding of embedded technologies.
+Rather than collecting isolated examples, the repository is structured around experiments that follow a consistent engineering approach: understand, design, implement, test and document.
 
 ---
 
 # 🎯 Objectives
 
-This laboratory aims to:
+The laboratory is designed to help me:
 
-- Master embedded programming concepts
-- Develop reusable embedded drivers
-- Learn real-time software development
-- Explore industrial communication protocols
-- Build reliable embedded applications
-- Document engineering experiments
-- Prepare for advanced robotics and IoT systems
+- strengthen embedded C/C++ programming skills;
+- understand microcontroller peripherals and hardware/software interaction;
+- develop reliable real-time applications with FreeRTOS;
+- explore communication protocols used in embedded and industrial systems;
+- build reusable drivers and small embedded projects;
+- document experiments, results and limitations;
+- prepare for more advanced work in robotics, IoT and embedded Linux.
 
 ---
 
-# 🧠 Learning Philosophy
+# 🧠 Method
 
-Every experiment follows the same engineering methodology:
+Each experiment follows the same basic workflow:
 
-1. Understand the theory
-2. Design the solution
+1. Understand the concept
+2. Define the expected behavior
 3. Implement the firmware
-4. Test and validate
-5. Document the results
-6. Identify improvements
+4. Test on hardware
+5. Validate the result
+6. Document observations and improvements
 
-The goal is not only to make things work, but also to understand **why** they work.
+The objective is not only to make a system work, but to understand **how and why it works**.
 
 ---
 
@@ -70,12 +67,6 @@ embedded-systems-lab/
 ├── LICENSE
 │
 ├── docs/
-│   ├── development-environment.md
-│   ├── coding-guidelines.md
-│   ├── experiment-template.md
-│   ├── debugging.md
-│   └── resources.md
-│
 ├── esp32/
 │   ├── fundamentals/
 │   ├── peripherals/
@@ -83,132 +74,79 @@ embedded-systems-lab/
 │   ├── networking/
 │   ├── freertos/
 │   └── projects/
-│
 ├── stm32/
-│
 ├── raspberry-pi-pico/
-│
 ├── embedded-linux/
-│
 ├── communication/
-│   ├── uart/
-│   ├── spi/
-│   ├── i2c/
-│   ├── can/
-│   ├── rs485/
-│   └── modbus/
-│
 ├── drivers/
-│
 ├── shared/
-│
 ├── media/
-│
 └── tools/
 ```
 
+Some directories represent planned learning areas and may remain incomplete until the corresponding topic is actively studied.
+
 ---
 
-# 🔬 Learning Areas
+# 🔬 Current Focus
 
 ## ESP32
 
+Topics currently explored include:
+
 - GPIO
-- Interrupts
-- Timers
-- PWM
 - ADC
-- DAC
+- PWM
+- interrupts and timers
 - UART
+- I²C
 - SPI
-- I2C
 - Wi-Fi
-- Bluetooth
 - MQTT
 - FreeRTOS
-- Deep Sleep
 
----
+## FreeRTOS
 
-## STM32
+The laboratory progressively covers:
 
-- HAL
-- LL Drivers
-- Timers
-- DMA
-- RTC
-- Interrupts
-- Power Management
+- tasks;
+- queues;
+- semaphores;
+- mutexes;
+- event groups;
+- software timers;
+- synchronization and task communication.
 
----
+## Communication
 
-## Embedded Linux
-
-- Boot Process
-- Device Tree
-- GPIO
-- UART
-- Kernel Modules
-
----
-
-## Industrial Communication
+Current and planned protocol work includes:
 
 - UART
+- I²C
 - SPI
-- I2C
+- MQTT
 - CAN Bus
 - RS485
 - Modbus
-- MQTT
 
 ---
 
-## Drivers
+# 📈 Progress
 
-Reusable drivers for:
+### Completed / actively practiced
 
-- LCD
-- OLED
-- HX711
-- DHT22
-- DS18B20
-- TCS3200
-- Motors
-- Encoders
-
----
-
-# 🚀 Engineering Projects
-
-This laboratory also contains complete embedded projects integrating multiple technologies.
-
-Examples:
-
-- Sensor acquisition
-- Industrial automation
-- Motor control
-- IoT nodes
-- Wireless communication
-- Robotics
-
----
-
-# 📈 Learning Progress
-
-Current roadmap:
-
-- [x] ESP32 Fundamentals
+- [x] ESP32 fundamentals
 - [x] GPIO
 - [x] ADC
 - [x] PWM
 - [x] Wi-Fi
 - [x] MQTT
+- [x] FreeRTOS fundamentals
 
-Next milestones:
+### Next milestones
 
-- [ ] ESP-IDF
 - [ ] Advanced FreeRTOS
+- [ ] ESP-IDF
 - [ ] STM32
 - [ ] CAN Bus
 - [ ] Embedded Linux
@@ -216,18 +154,16 @@ Next milestones:
 
 ---
 
-# 🌍 Long-Term Vision
+# 🚀 Long-Term Direction
 
-This laboratory is intended to evolve throughout my engineering career.
+This laboratory will progressively expand toward:
 
-Future work will include:
-
-- Embedded AI
-- Industrial IoT
-- Autonomous Robotics
-- Functional Safety
-- Edge Computing
-- Cyber-Physical Systems
+- embedded Linux;
+- industrial communication;
+- robotics;
+- Edge AI / TinyML;
+- functional safety;
+- cyber-physical systems.
 
 ---
 
@@ -237,9 +173,9 @@ Future work will include:
 
 **Dodji Virgile TCHIDEHOU**
 
-Industrial Computing & Maintenance Engineer
+Graduate in Industrial Computing & Maintenance
 
-Embedded Systems • IoT • Robotics • Intelligent Systems
+Embedded Systems • Mechatronics • IoT • Robotics
 
 </div>
 
