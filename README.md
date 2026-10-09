@@ -2,61 +2,61 @@
 
 # ⚙️ Embedded Systems Lab
 
-### Personal laboratory for embedded systems, real-time programming and hardware/software integration
+### Laboratoire personnel dédié aux systèmes embarqués, au temps réel et à l’intégration matériel/logiciel
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
-![Status](https://img.shields.io/badge/Status-Active%20Learning-blue.svg)
-![Language](https://img.shields.io/badge/C-C%2FC%2B%2B-00599C.svg?logo=cplusplus)
-![Platform](https://img.shields.io/badge/Platform-ESP32-E7352C.svg?logo=espressif&logoColor=white)
+[![Licence: MIT](https://img.shields.io/badge/Licence-MIT-2ea44f.svg)](LICENSE)
+![Statut](https://img.shields.io/badge/Statut-Apprentissage%20actif-blue.svg)
+![Langage](https://img.shields.io/badge/C-C%2FC%2B%2B-00599C.svg?logo=cplusplus)
+![Plateforme](https://img.shields.io/badge/Plateforme-ESP32-E7352C.svg?logo=espressif&logoColor=white)
 ![RTOS](https://img.shields.io/badge/RTOS-FreeRTOS-e6522c.svg)
 ![Arduino](https://img.shields.io/badge/Framework-Arduino-00979D.svg)
 
-**Embedded Systems • RTOS • Drivers • Communication • IoT • Hardware Integration**
+**Systèmes embarqués • RTOS • Drivers • Communications • IoT • Intégration matériel/logiciel**
 
 </div>
 
 ---
 
-# 📖 Overview
+# 📖 Présentation
 
-This repository is my personal laboratory for learning and experimenting with embedded systems through practical implementation, hardware prototyping and technical documentation.
+Ce dépôt constitue mon laboratoire personnel d’apprentissage et d’expérimentation autour des systèmes embarqués, à travers la programmation, le prototypage matériel, les essais et la documentation technique.
 
-The current work is centered on **ESP32, C/C++, FreeRTOS, peripherals and communication protocols**. More advanced platforms and topics are introduced progressively as the laboratory evolves.
+Les travaux actuels sont principalement centrés sur **ESP32, C/C++, FreeRTOS, les périphériques et les protocoles de communication**. Les plateformes et sujets plus avancés sont intégrés progressivement au fil de ma montée en compétences.
 
-Rather than collecting isolated examples, the repository is structured around experiments that follow a consistent engineering approach: understand, design, implement, test and document.
-
----
-
-# 🎯 Objectives
-
-The laboratory is designed to help me:
-
-- strengthen embedded C/C++ programming skills;
-- understand microcontroller peripherals and hardware/software interaction;
-- develop reliable real-time applications with FreeRTOS;
-- explore communication protocols used in embedded and industrial systems;
-- build reusable drivers and small embedded projects;
-- document experiments, results and limitations;
-- prepare for more advanced work in robotics, IoT and embedded Linux.
+L’objectif n’est pas d’accumuler des exemples isolés, mais de construire un ensemble d’expériences suivant une démarche d’ingénierie cohérente : comprendre, concevoir, implémenter, tester et documenter.
 
 ---
 
-# 🧠 Method
+# 🎯 Objectifs
 
-Each experiment follows the same basic workflow:
+Ce laboratoire me permet de :
 
-1. Understand the concept
-2. Define the expected behavior
-3. Implement the firmware
-4. Test on hardware
-5. Validate the result
-6. Document observations and improvements
-
-The objective is not only to make a system work, but to understand **how and why it works**.
+- renforcer mes compétences en programmation embarquée C/C++ ;
+- approfondir le fonctionnement des microcontrôleurs et l’interaction matériel/logiciel ;
+- développer des applications temps réel avec FreeRTOS ;
+- explorer les protocoles de communication utilisés dans les systèmes embarqués et industriels ;
+- concevoir progressivement des drivers réutilisables et de petits systèmes embarqués ;
+- documenter les expériences, résultats et limites rencontrées ;
+- préparer des travaux plus avancés en robotique, IoT et Linux embarqué.
 
 ---
 
-# 📁 Repository Structure
+# 🧠 Méthode de travail
+
+Chaque expérience suit une démarche simple :
+
+1. Comprendre le concept
+2. Définir le comportement attendu
+3. Implémenter le firmware
+4. Tester sur le matériel
+5. Valider le résultat
+6. Documenter les observations et pistes d’amélioration
+
+L’objectif n’est pas seulement de faire fonctionner un système, mais de comprendre **comment et pourquoi il fonctionne**.
+
+---
+
+# 📁 Structure du dépôt
 
 ```text
 embedded-systems-lab/
@@ -84,20 +84,20 @@ embedded-systems-lab/
 └── tools/
 ```
 
-Some directories represent planned learning areas and may remain incomplete until the corresponding topic is actively studied.
+Certains dossiers correspondent à des axes d’apprentissage prévus et peuvent rester incomplets tant que le sujet concerné n’a pas encore été abordé activement.
 
 ---
 
-# 🔬 Current Focus
+# 🔬 Axes actuellement travaillés
 
 ## ESP32
 
-Topics currently explored include:
+Sujets déjà abordés ou en cours :
 
 - GPIO
 - ADC
 - PWM
-- interrupts and timers
+- interruptions et timers
 - UART
 - I²C
 - SPI
@@ -107,19 +107,19 @@ Topics currently explored include:
 
 ## FreeRTOS
 
-The laboratory progressively covers:
+Le laboratoire couvre progressivement :
 
-- tasks;
-- queues;
-- semaphores;
-- mutexes;
-- event groups;
-- software timers;
-- synchronization and task communication.
+- tâches ;
+- files de messages ;
+- sémaphores ;
+- mutex ;
+- groupes d’événements ;
+- timers logiciels ;
+- synchronisation et communication entre tâches.
 
-## Communication
+## Communications
 
-Current and planned protocol work includes:
+Protocoles actuels et prévus :
 
 - UART
 - I²C
@@ -131,56 +131,56 @@ Current and planned protocol work includes:
 
 ---
 
-# 📈 Progress
+# 📈 Progression
 
-### Completed / actively practiced
+### Acquis / pratiqués actuellement
 
-- [x] ESP32 fundamentals
+- [x] Fondamentaux ESP32
 - [x] GPIO
 - [x] ADC
 - [x] PWM
 - [x] Wi-Fi
 - [x] MQTT
-- [x] FreeRTOS fundamentals
+- [x] Fondamentaux FreeRTOS
 
-### Next milestones
+### Prochaines étapes
 
-- [ ] Advanced FreeRTOS
+- [ ] FreeRTOS avancé
 - [ ] ESP-IDF
 - [ ] STM32
 - [ ] CAN Bus
-- [ ] Embedded Linux
+- [ ] Linux embarqué
 - [ ] Zephyr RTOS
 
 ---
 
-# 🚀 Long-Term Direction
+# 🚀 Direction à long terme
 
-This laboratory will progressively expand toward:
+Ce laboratoire évoluera progressivement vers :
 
-- embedded Linux;
-- industrial communication;
-- robotics;
-- Edge AI / TinyML;
-- functional safety;
-- cyber-physical systems.
+- Linux embarqué ;
+- communications industrielles ;
+- robotique ;
+- Edge AI / TinyML ;
+- sûreté de fonctionnement ;
+- systèmes cyber-physiques.
 
 ---
 
 <div align="center">
 
-# 👨‍💻 Author
+# 👨‍💻 Auteur
 
 **Dodji Virgile TCHIDEHOU**
 
-Graduate in Industrial Computing & Maintenance
+Diplômé en Informatique Industrielle et Maintenance
 
-Embedded Systems • Mechatronics • IoT • Robotics
+Systèmes embarqués • Mécatronique • IoT • Robotique
 
 </div>
 
 ---
 
-# 📄 License
+# 📄 Licence
 
-This project is licensed under the MIT License.
+Ce projet est distribué sous licence MIT.
